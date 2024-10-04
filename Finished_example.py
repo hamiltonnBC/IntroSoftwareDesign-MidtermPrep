@@ -1,58 +1,85 @@
-#####################################################
+######################################################################
+# Authors: Jane Doe
+# Username: doej
 #
-# REVIEW THIS AFTER YOU HAVE ATTEMPTED THE EXERCISES
-# Happy coding! :)
+# Assignment: Reviewing software design fundamentals
 #
-#####################################################
+# Purpose: To review and practice the fundamentals of software design, including
+# the use of functions, conditionals, loops, and testing. This program will
+# draw using the turtle graphics library.
+######################################################################
+# Acknowledgements:
+#  Berea College Computer Science Department
+#  Original Author: Nicholas Hamilton
+######################################################################
 
 import turtle
 
+
 def draw_circle(t, sz):
-    """Draws a circle with the given turtle and size."""
-    t.circle(sz)  # Draws a circle with the radius sz
+    """
+    Draw a circle using the given turtle and size.
+
+    Args:
+        t (turtle.Turtle): The turtle object to use for drawing.
+        sz (int): The size (radius) of the circle.
+    """
+    t.circle(sz)
 
 
 def draw_square(t, size):
-    """Draws a square of a given size."""
-    for side in range(4):  # For loop to draw each side of the square
+    """
+    Draw a square using the given turtle and size.
+
+    Args:
+        t (turtle.Turtle): The turtle object to use for drawing.
+        size (int): The size (side length) of the square.
+    """
+    for i in range(4):
         t.forward(size)
         t.right(90)
 
 
 def main():
-    wn = turtle.Screen()  # Set up the Turtle window
-    wn.bgcolor("lightblue")  # Set the background color
+    # Set up Turtle Window
+    wn = turtle.Screen()
+    wn.bgcolor("lightblue")
 
-    # Create a turtle object for the circle
+    # Create a turtle object for drawing circles
     circle_turtle = turtle.Turtle()
-    circle_turtle.speed(0)  # Set the drawing speed to the fastest
+    circle_turtle.speed(0)
     circle_size = 100
-    draw_circle(circle_turtle, circle_size)  # Draw a circle with the specified size
+    draw_circle(circle_turtle, circle_size)
 
     # Create a turtle for drawing squares
     square_turtle = turtle.Turtle()
     square_turtle.speed(0)  # Set the drawing speed to the fastest
-    size = 100  # Initial size of the square
+    size = 100
 
-    # While loop to draw squares and decrease their size
-    while size > 20:
+    # Implement the while loop to draw squares
+    while size >= 20:
+        # Set color based on size
         if size > 75:
-            square_turtle.color("blue")
+            square_turtle.color("red")
         elif size > 50:
             square_turtle.color("green")
         else:
-            square_turtle.color("red")
+            square_turtle.color("blue")
 
-        draw_square(square_turtle, size)  # Draw a square of the current size
+        # Draw the square
+        draw_square(square_turtle, size)
 
+        # Move turtle and prepare for next square
         square_turtle.penup()
-        square_turtle.right(10)  # Rotate slightly to the right for the spiral effect
-        square_turtle.forward(10)  # Move a bit forward to start the next square
+        square_turtle.right(10)
+        square_turtle.forward(10)
         square_turtle.pendown()
 
-        size -= 10  # Decrease the size for the next square
+        # Decrease size for next square
+        size -= 10
 
-    wn.exitonclick()  # Wait for a user click to close the window
+    # Add exit on click method to close the window
+    wn.exitonclick()
 
 
 if __name__ == "__main__":
