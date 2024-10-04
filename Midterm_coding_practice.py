@@ -1,6 +1,6 @@
 ######################################################################
-# Authors: Nicholas Hamilton     TODO: Change this to your name
-# Username: hamiltonn            TODO: Change this to your username
+# Authors: Example    TODO: Change this to your name
+# Username: Example       TODO: Change this to your username
 #
 # Assignment: Reviewing software design fundamentals
 #
@@ -10,13 +10,14 @@
 ######################################################################
 # Acknowledgements:
 #  Berea College Computer Science Department
+#  Original Author: Nicholas Hamilton
 ######################################################################
 ######################################################################
 # Example turtle methods: penup(), pendown(), goto(), circle(),
 # hideturtle(), color(), pensize(), speed(), begin_fill(), end_fill(),
 # forward(), right(), left(), backward(), fillcolor()
 ######################################################################
-# 1 TODO: Add Docstrings to all functions
+# TODO: Add Docstrings to all functions
 import turtle
 def draw_circle(t, sz): # TODO complete this function
     # Your code here
@@ -31,8 +32,10 @@ def main():
     # wn.bgcolor("lightblue") TODO: Change the background color to your liking.
     # TODO: Create a turtle object to pass into the draw_circle function
     circle_size = 100
-    # draw_circle(#TODO: pass your turtle object and the variable circle_size here separated by a comma)
-    #
+    #TODO Call draw_circle function here. Pass Turtle and circle_size as arguments, separated by a comma)
+
+
+
     square_turtle = turtle.Turtle()  # Create a turtle for drawing square
     square_turtle.speed(0)  # Set the drawing speed to the fastest
     size = 100
@@ -49,8 +52,7 @@ def main():
         square_turtle.pendown()
         size -= 10  # Decrease the size for the next square ##################
 
-    # After the while loop, add the following line undented to close the window on click.
-
+    # After the while loop, add the following line unindented to close the window on click.
     # TODO: Add exit on click method to close the window.
 
 if __name__ == "__main__":
